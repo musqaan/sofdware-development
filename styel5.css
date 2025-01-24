@@ -1,0 +1,76 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color:white;
+    padding: 20px;
+    color:  rgb(90, 84, 84);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .logo  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color:rgb(141, 128, 128);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 2px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #e8f5e9;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: rgb(227, 11, 92);
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: rgb(112, 101, 97);
+    padding: 30px;
+    margin: 30px auto;
+    width: 50%;
+}
+.hero img{
+    border-radius: 80px;
+}
+
