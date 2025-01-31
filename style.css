@@ -1,0 +1,68 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Parallax Effect Backgrounds */
+.bg-1 {
+    background-image: url('t1.jpg');
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-2 {
+    background-image: url('t2.jpg');
+    width: 100%;
+    height: 100vh;
+}
+.bg-3 {
+    background-image: url('t3.jpg');
+    width: 100%;
+    height: 100vh;
+}
+.bg-4 {
+    background-image: url('t4.jpg');
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* Scroll to top button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
