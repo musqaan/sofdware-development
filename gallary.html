@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gallary.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Image Gallary</h1>
+    <div class="image-container">
+        <div class="image"><img src="p1.jpg " height="250px" width="350px" alt=""></div>
+        <div class="image"><img src="p2.jpg" height="250px" width="350px" alt=""></div>
+        <div class="image"><img src="p3.jpg" height="250px" width="350px" alt=""></div>
+        <div class="image"><img src="p4.jpg" height="250px" width="350px" alt=""></div>
+        <div class="image"><img src="p5.jpg" height="250px" width="350px" alt=""></div>
+        <div class="image"><img src="p6.jpg" height="250px" width="350px" alt=""></div>
+        
+    </div>
+    <div class="popup-image">
+        <span>&times;</span>
+        <img src="p1.jpg"  height="250px" width="350px">
+    </div>
+    </div>
+    <script>
+        document.querySelectorAll('.image-container img').forEach(image => {
+    image.addEventListener('click', () => {
+        document.querySelector('.popup-image').style.display = 'block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+    });
+});
+
+document.querySelector('.popup-image span').addEventListener('click', () => {
+    document.querySelector('.popup-image').style.display = 'none';
+});
+
+    </script>
+</body>
+</html>
