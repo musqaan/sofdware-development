@@ -1,48 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landing page</title>
-    <link rel="stylesheet" href="style3.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Landing Page</title>
+  <style>
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21);
+        background-size: 300%  300%;
+        animation: color 12s ease-in-out infinite;
+      
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        width: auto;
+        /* background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21);
+        background-size: 300%  300%;
+        animation: color 12s ease-in-out infinite; */
+     
+    }
+    @keyframes color{
+        0%{
+            background-position: 0 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+
+        }
+       100%{
+            background-position: 0 50%;
+        }
+    }
+
+    /* Header Section */
+    header {
+      font-weight: bold;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    /* Subheading */
+    .subheading {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeIn 2s 0.5s forwards;
+    }
+
+    /* Button */
+    .cta-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s 1s forwards;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px);
+      background-color: #45a049;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer Section */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #999;
+      animation: fadeIn 2s 2s forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.6rem;
+      }
+      .subheading {
+        font-size: 1,5rem;
+        color: #5d5454;
+      }
+      .cta-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+    }
+    .navbar {
+        display: flex;
+        font-weight: bold;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    .navbar .logo a{
+        text-decoration: none;
+        font-size: 2rem;
+        color:white;
+        padding-left: 30px;
+    }
+    .nav-links {
+        list-style: none;
+        text-decoration: none;
+        justify-content: space-evenly;
+        display: flex;
+        padding-right:30px ;
+        gap: 3rem;
+    }
+    .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    }
+    .nav-links li a:hover {
+    color: #ddd;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+  </style>
 </head>
 <body>
-    <div id="main">
-        <div id="left">
-        <div id="lnav">
-           <a><i> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  height="24px" width="24px" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg></i>
-
-            
-            <div id="lnavr">
-                <a href="">Home</a>
-                <a href="">Work</a>
-                <a href=""><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  height="24px" width="24px"  fill="currentColor"><path d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36771 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z"></path></svg></i></a>
+    
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">MySite</a>
             </div>
-            
-        </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </nav>
+    
+  <div class="container">
+    <header>Welcome to Our Website</header>
+    <p class="subheading">We offer the best solutions for your business needs.</p>
+    <button class="cta-btn">Get Started</button>
+  </div>
 
-    <div id="textcenter">
-        <h1>
-            OranGo,
-        </h1>
-        <p>At Orango, we’re passionate about delivering the best, all-natural fruit juices straight from nature to your glass. Our juices are made from the finest, handpicked oranges, bursting with flavor and packed with vitamins. Whether you're craving a refreshing morning boost, a midday pick-me-up, or a healthy snack, Orango offers the perfect juice for any occasion.
+  <footer>© 2025 Company Name. All Rights Reserved.</footer>
 
-            </p>
-        <a href="">Read</a>
-    </div>
+  <script>
+    function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
 
-
-
-
-
-        </div>
-        <div id="right">
-        <div id="rtop">
-            <div id="rtopleft"></div>
-            <div id="rtopright"></div>
-        </div>
-        <div id="rbottom"></div>
-    </div>
-</div>
+  </script>
 </body>
 </html>
